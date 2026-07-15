@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Heading Colors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 14px;
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005a9e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Main Heading</h1>
+  <h2>Form Section</h2>
+  <h3>Subheading Example</h3>
+
+  <button id="color-btn">Change Heading Colors</button>
+
+  <script>
+    // Function to generate random hex color
+    function getRandomColor() {
+      return "#" + Math.floor(Math.random() * 16777215).toString(16);
+    }
+
+    // Add event listener to button
+    document.getElementById("color-btn").addEventListener("click", function() {
+      const headings = document.querySelectorAll("h1, h2, h3");
+      headings.forEach(h => {
+        h.style.color = getRandomColor(); // each heading gets its own random color
+      });
+    });
+  </script>
+</body>
+</html>
