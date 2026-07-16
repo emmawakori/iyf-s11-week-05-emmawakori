@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Paragraph Creator</title>
+  <style>
+    .paragraph-container {
+      margin-top: 10px;
+    }
+    .paragraph {
+      margin: 5px 0;
+      padding: 5px;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .delete-btn {
+      margin-left: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 3px 6px;
+    }
+  </style>
+</head>
+<body>
+  <button id="addBtn">Add Paragraph</button>
+  <div id="container" class="paragraph-container"></div>
+
+  <!-- Link to external JS file -->
+  <script src="elementCreator.js"></script>
+</body>
+</html>
