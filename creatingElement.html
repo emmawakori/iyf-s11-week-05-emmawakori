@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Images</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    p {
+      margin: 0 0 1rem;
+      max-width: 60ch;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      padding: 0.7rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    #imageContainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Creation Demo</h1>
+  <p>This is a demo to create images dynamically using JavaScript.</p>
+
+  <img src="https://via.placeholder.com/150" alt="Sample Image">
+  <button onclick="createImage()">Create Image</button>
+  <div id="imageContainer"></div>
+
+  <script src="creatingElement.js"></script>
+</body>
+</html>

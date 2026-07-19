@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Copier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #source, #target {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 250px;
+      min-height: 50px;
+      margin-bottom: 10px;
+    }
+    #target.drag-over {
+      border-color: #007bff;
+      background-color: #e6f0ff;
+    }
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Day 4: Content Copier 🟡</h2>
+
+  <div id="source" draggable="true">
+    This is the source content. Drag me or click the button to copy.
+  </div>
+
+  <div id="target">
+    Target will appear here.
+  </div>
+
+  <button id="copyBtn">Copy Content</button>
+
+  <script>
+    const source = document.getElementById("source");
+    const target = document.getElementById("target");
+    const copyBtn = document.getElementById("copyBtn");
+
+    // Copy on button click
+    copyBtn.addEventListener("click", () => {
+      target.innerHTML = source.innerHTML;
+    });
+
+    // Drag & Drop
+    source.addEventListener("dragstart", (event) => {
+      event.dataTransfer.setData("text/plain", source.innerHTML);
+    });
+
+    target.addEventListener("dragover", (event) => {
+      event.preventDefault(); // allow drop
+      target.classList.add("drag-over");
+    });
+
+    target.addEventListener("dragleave", () => {
+      target.classList.remove("drag-over");
+    });
+
+    target.addEventListener("drop", (event) => {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text/plain");
+      target.innerHTML = data;
+      target.classList.remove("drag-over");
+    });
+  </script>
+</body>
+</html>
