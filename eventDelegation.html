@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>event delegation</title>
+<style>
+  li.completed {
+    text-decoration: line-through;
+    color: rgb(44, 8, 172);
+  }
+  button.delete {
+    margin-left: 10px;
+    color: red;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <h1>Task List</h1>
+<input id="newTask" type="text" placeholder="Add a new task">
+<button id="addBtn">Add</button>
+
+<ul id="taskList">
+  <!-- Tasks will appear here -->
+</ul>
+
+<script src = "eventDelegation.js"></script>
+</body>
+</html>

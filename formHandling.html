@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>form handling</title>
+    <style>
+        .error {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        #form-status {
+            margin-top: 12px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form id="contact-form">
+        <input type="text" id="name" name="name" placeholder="Name">
+        <span class="error-message" id="name-error"></span>
+
+        <input type="email" id="email" name="email" placeholder="Email">
+        <span class="error-message" id="email-error"></span>
+
+        <button type="submit">Submit</button>
+        <p id="form-status"></p>
+    </form>
+
+    <script src="formHandling.js"></script>
+</body>
+</html>

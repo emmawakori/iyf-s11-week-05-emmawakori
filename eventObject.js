@@ -33,23 +33,22 @@ document.addEventListener("keydown", function(event) {
 // Escape will prevent certain default actions (for demonstration, no action shown)
 
 // Attach an event listener to the whole document
-document.addEventListener('keydown', function(event) {
-    // Check if the event is Ctrl+S (Cmd+S for Mac supported)
-    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
-        event.preventDefault();  // Prevent the browser's default save dialog
-        alert('Saved!');         // Show a custom alert
-        console.log('Ctrl+S was pressed, saving logic executed.'); 
+ document.addEventListener("keydown", function (event) {
+    // Ctrl+S → Show "Saved!" alert
+    if (event.ctrlKey && event.key.toLowerCase() === "s") {
+      event.preventDefault(); // prevent browser save dialog
+      alert("Saved!");
     }
 
-    // Check if the Escape key is pressed
-    if (event.key === 'Escape') {
-        event.preventDefault();  // Prevent default escape behavior
-        console.log('Escape key pressed, default action prevented.');
-        // You can add custom logic for Escape here if needed
+    // Escape → Clear all form inputs
+    if (event.key === "Escape") {
+      const form = document.querySelector("form");
+      if (form) form.reset();
     }
-});
 
-// Usage Example:
-// Open a webpage with this script and press Ctrl+S or Escape
-// Ctrl+S will show "Saved!" alert
-// Escape will log a message and prevent default behavior
+    // Ctrl+Enter → Submit form
+    if (event.ctrlKey && event.key === "Enter") {
+      const form = document.querySelector("form");
+      if (form) form.requestSubmit(); // modern way to trigger submit
+    }
+  });
